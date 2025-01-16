@@ -9,7 +9,6 @@
 
   - name: Enable and start MySQL service
     ansible.builtin.service:
-      name: musqld
+      name: mysqld
       state: started
       enabled: yes
-      
