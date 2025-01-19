@@ -1,5 +1,5 @@
 - name: Configured backend server
-  hosts: mysql
+  hosts: backend
   become: yes  
   tasks:
   - name: Disable current nodejs
@@ -11,5 +11,5 @@
   - name: Install nodejs
     ansible.builtin.package:
       name: nodejs
-      state: absent
+      state: present
     
