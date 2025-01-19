@@ -11,5 +11,5 @@
   - name: Install nodejs
     ansible.builtin.package:
       name: nodejs
-      state: present
+      state: absent
     
