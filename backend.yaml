@@ -45,7 +45,7 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
 
-  - name: Install mysql binaries #Installing binaries using loop
+  - name: Install Python binaries to connect mysql #Installing Python libraries using loop to connect mysql
     ansible.builtin.pip:
       name: "{{ item }}"
       executable: pip3.9
@@ -61,5 +61,14 @@
       login_password: ExpenseApp@1
       login_host: mysql.dakshina.cloud
       target: /app/schema/backend.sql
+
+  - name: daemon reload and restart service
+    ansible.builtin.systemd_service:
+      enabled: true
+      state: restarted  
+      daemon_reload: true
+      name: backend
+
+
 
 
