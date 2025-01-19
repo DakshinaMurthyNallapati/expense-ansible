@@ -60,6 +60,6 @@
       login_user: root
       login_password: ExpenseApp@1
       login_host: mysql.dakshina.cloud
-      target: /app/schema.backend.sql
+      target: /app/schema/backend.sql
 
 
